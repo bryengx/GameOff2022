@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,14 +12,29 @@ public class Player : MonoBehaviour
     private bool grounded;
     public List<GameObject> groundObjects;
     public bool isOk;
+    private float distance;
+    private int score;
     void Start()
     {
         groundObjects = new List<GameObject>();
         rb = GetComponent<Rigidbody2D>();
         isOk = true;
+        distance = 0;
+        score = 0;
+    }
+    public int GetScore()
+    {
+        return score;
     }
 
-    // Update is called once per frame
+    public string GetDistance()
+    {
+        return distance.ToString("0.00");
+    }
+    public void AddScore(int val)
+    {
+        score += val;
+    }
     void Update()
     {
 
@@ -45,6 +61,11 @@ public class Player : MonoBehaviour
                         rb.velocity += Vector2.right * 25 * Time.fixedDeltaTime;
                 }
             }
+        }
+        if (isOk)
+        {
+            if(distance < transform.position.x)
+                distance = transform.position.x;
         }
     }
     public void Loose()

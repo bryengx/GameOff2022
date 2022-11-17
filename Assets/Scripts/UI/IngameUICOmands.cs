@@ -5,7 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class IngameUICOmands : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
         
@@ -14,7 +13,7 @@ public class IngameUICOmands : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     public void ResetLevel()
     {

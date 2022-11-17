@@ -7,13 +7,19 @@ public class Ball : MonoBehaviour, IInteractable
     private Rigidbody2D rb;
     private Player player;
     public Transform R;
+    public int startSpin;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        rb.angularVelocity = startSpin * 10;
     }
     public void LinkPlayer(Player pl)
     {
         player = pl;
+    }
+    public bool HasPlayer()
+    {
+        return player != null;
     }
     public void JumpInteraction()
     {

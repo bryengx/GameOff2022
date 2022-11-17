@@ -28,6 +28,7 @@ public class AttachToBall : MonoBehaviour
                 player.AttachInteractable(ball);
                 player.transform.position = new Vector3(ball.transform.position.x, ball.transform.position.y + ball.GetRadius() + 1.0f, ball.transform.position.z);
                 player.GetComponent<Rigidbody2D>().simulated = false;
+                player.AddScore(1);
             }
             else
             {
