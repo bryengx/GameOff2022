@@ -57,11 +57,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AttachToBall.cs" />
+    <Compile Include="Assets\Scripts\DataStore.cs" />
+    <Compile Include="Assets\Scripts\SoundOnCollision.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\Game.cs" />
     <Compile Include="Assets\Scripts\FinishPost.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\Obsticle.cs" />
+    <Compile Include="Assets\Scripts\SoundEffect.cs" />
+    <Compile Include="Assets\Scripts\ScoreItem.cs" />
     <Compile Include="Assets\Scripts\UI\IngameUI.cs" />
     <Compile Include="Assets\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Scripts\UI\IngameUICOmands.cs" />
@@ -69,6 +73,7 @@
     <Compile Include="Assets\Scripts\EndlessMode.cs" />
     <Compile Include="Assets\Scripts\ObsticleArea.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
+    <Compile Include="Assets\Scripts\EffectsManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

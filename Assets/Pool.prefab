@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8954468723479260464}
   - component: {fileID: 7939124002934598846}
+  - component: {fileID: 5194112777472398788}
   - component: {fileID: 9136058218864424029}
   - component: {fileID: 3697524145498397953}
   - component: {fileID: 6304064699281152826}
@@ -219,6 +220,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   failOnCollision: 1
+--- !u!114 &5194112777472398788
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3440796038021724670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e02317dd33b0794b8bf5b16eaabfec1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &9136058218864424029
 BoxCollider2D:
   m_ObjectHideFlags: 0

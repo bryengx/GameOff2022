@@ -74,11 +74,17 @@ public class Player : MonoBehaviour
         rb.freezeRotation = false;
         rb.angularVelocity = rb.velocity.x * 15;
         Game.instance.ShowGameOverScreen();
+        Game.instance.PlaySheepSound(transform.position);
+        DataStore.SaveLongestDist(distance);
+        DataStore.SaveHighScore(score);
     }
     public void Jump()
     {
         if (interactable != null)
+        {
             interactable.JumpInteraction();
+            Game.instance.PlayJumpSound(transform.position);
+        }
         else
             if(grounded)
                 rb.AddForce(Vector2.up * 400);
@@ -116,7 +122,6 @@ public class Player : MonoBehaviour
     }
     public void Move(InputAction.CallbackContext context)
     {
-        Debug.Log("MOVE");
         MoveInput(context);
     }
     public void ActionBtnDown(InputAction.CallbackContext context)

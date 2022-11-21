@@ -19,4 +19,8 @@ public class IngameUICOmands : MonoBehaviour
     {
         SceneManager.LoadScene("SampleScene");
     }
+    //public void ResetLevel()
+    //{
+    //    SceneManager.LoadScene("SampleScene");
+    //}
 }

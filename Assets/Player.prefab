@@ -661,6 +661,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ball: {fileID: 0}
+  lastBall: {fileID: 0}
+  pointsMatrix: 640000002c010000f4010000200300001405000034080000480d00007c150000c422000040380000
 --- !u!1 &5374062039283089866
 GameObject:
   m_ObjectHideFlags: 0
