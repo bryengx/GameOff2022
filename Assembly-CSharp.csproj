@@ -70,10 +70,15 @@
     <Compile Include="Assets\Scripts\CameraMove.cs" />
     <Compile Include="Assets\Scripts\UI\IngameUICOmands.cs" />
     <Compile Include="Assets\Scripts\NoTouchGrass.cs" />
+    <Compile Include="Assets\Scripts\Bird.cs" />
     <Compile Include="Assets\Scripts\EndlessMode.cs" />
     <Compile Include="Assets\Scripts\ObsticleArea.cs" />
     <Compile Include="Assets\Scripts\Ball.cs" />
+    <Compile Include="Assets\Scripts\CorrectRotation.cs" />
     <Compile Include="Assets\Scripts\EffectsManager.cs" />
+    <Compile Include="Assets\Scripts\Cannon.cs" />
+    <Compile Include="Assets\Scripts\RingOfFire.cs" />
+    <Compile Include="Assets\Scripts\BackgroundItem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

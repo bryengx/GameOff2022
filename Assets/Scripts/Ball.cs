@@ -8,6 +8,7 @@ public class Ball : MonoBehaviour, IInteractable
     private Player player;
     public Transform R;
     public int startSpin;
+    public bool drumRoll = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -29,8 +30,12 @@ public class Ball : MonoBehaviour, IInteractable
         rb.velocity = -rb.velocity;
         player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * 500);
         player.DeattachInteractable();
+        Game.instance.PlayJumpSound(transform.position);
     }
-
+    public Vector2 GetVelocity()
+    {
+        return rb.velocity;
+    }
     public void MoveInteraction(int turnInt)
     {
         if (turnInt == 1)

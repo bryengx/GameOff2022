@@ -30,6 +30,22 @@ public class ObsticleArea : MonoBehaviour
             GameObject zoneObj = Instantiate(EndlessMode.instance.GetRandomZone());
             ObsticleArea zone = zoneObj.GetComponentInChildren<ObsticleArea>();
             zoneObj.transform.position = new Vector3(lastZone.right.position.x + (zone.transform.position.x - zone.left.position.x), lastZone.transform.position.y, 0);
+            EndlessMode.instance.ExtraContent(zoneObj.transform.position);
+
+            float x = zone.left.position.x + Random.Range(1.25f, 5.5f);
+            while (x < zone.right.position.x)
+            {
+                float y = Random.Range(2.0f, 4.2f);
+                GameObject backObj = Instantiate(EndlessMode.instance.GetRandomBackObj());
+                backObj.transform.position = new Vector3(x, y, y / 10f);
+
+                x += Random.Range(1.25f, 3.5f);
+                if (y < 3)
+                    backObj.transform.localScale *= Random.Range(1.4f, 1.6f);
+                else if (x < 4)
+                    backObj.transform.localScale *= Random.Range(1.2f, 1.35f);
+            }
+
             triggered = true;
         }            
     }

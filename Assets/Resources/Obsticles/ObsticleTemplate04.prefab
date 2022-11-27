@@ -59,7 +59,7 @@ Transform:
   m_GameObject: {fileID: 9140386380759262205}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 6, y: 5, z: 1}
+  m_LocalScale: {x: 10, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9140386381349784110}
@@ -132,7 +132,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -143,7 +143,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 2}
+  m_Size: {x: 1, y: 5}
   m_EdgeRadius: 0
 --- !u!114 &4703053626879018004
 MonoBehaviour:
@@ -232,6 +232,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 9140386381601396352}
     m_Modifications:
     - target: {fileID: 5576868311473829009, guid: 1fb83235885b30b4399fca9a1796e714, type: 3}
+      propertyPath: startSpin
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5576868311473829009, guid: 1fb83235885b30b4399fca9a1796e714, type: 3}
       propertyPath: startSpinMax
       value: 1
       objectReference: {fileID: 0}
@@ -253,7 +257,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5576868311473829010, guid: 1fb83235885b30b4399fca9a1796e714, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.65
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: 5576868311473829010, guid: 1fb83235885b30b4399fca9a1796e714, type: 3}
       propertyPath: m_LocalPosition.y

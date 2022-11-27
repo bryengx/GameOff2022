@@ -8,6 +8,7 @@ public interface IInteractable
     void JumpInteraction();
     void MoveInteraction(int turnInt);
     void Position();
+    Vector2 GetVelocity();
 }
 public class Utils : MonoBehaviour
 {

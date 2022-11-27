@@ -47,11 +47,12 @@ public class Game : MonoBehaviour
         DisableAllScreens();
         FinishScreen.SetActive(true);
     }
-    public static void CreateTextMessage(string msg, Vector3 pos, Color col, float speed = 1, float size = 4)
+    public static void CreateTextMessage(string msg, Vector3 pos, Color col, float speed = 1, float size = 6)
     {
         GameObject go = Instantiate(Resources.Load<GameObject>("FloatText"), pos, Quaternion.Euler(0, 0, 0));
         go.GetComponent<Rigidbody2D>().velocity = Vector3.up * speed;
         go.GetComponent<TextMeshPro>().text = msg;
+        go.GetComponent<TextMeshPro>().fontSize = size;
         go.GetComponent<TextMeshPro>().color = col;
         Destroy(go, 1.5f);
     }

@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     public bool isOk;
     private float distance;
     private int score;
+    private Animator anim;
     void Start()
     {
         groundObjects = new List<GameObject>();
@@ -21,7 +22,22 @@ public class Player : MonoBehaviour
         isOk = true;
         distance = 0;
         score = 0;
+        anim = GetComponent<Animator>();
     }
+    public void PlayAnimation(string animation)
+    {
+        anim.Play(animation, 0, 0f);
+    }
+
+    internal float GetSpeed()
+    {
+        if (rb.simulated)
+            return rb.velocity.x;
+        else if (interactable != null)
+            return interactable.GetVelocity().x;
+        return 0;
+    }
+
     public int GetScore()
     {
         return score;
@@ -41,10 +57,13 @@ public class Player : MonoBehaviour
     }
     private void FixedUpdate()
     {
+        anim.SetBool("Attached", interactable != null);
         if (interactable != null)
         {
             interactable.Position();
             interactable.MoveInteraction(turnInt);
+
+            anim.SetFloat("Speed", interactable.GetVelocity().magnitude);
         }
         else
         {
@@ -77,17 +96,22 @@ public class Player : MonoBehaviour
         Game.instance.PlaySheepSound(transform.position);
         DataStore.SaveLongestDist(distance);
         DataStore.SaveHighScore(score);
+        PlayAnimation("Idle");
+        FindObjectOfType<CameraMove>().StopBGM();
     }
     public void Jump()
     {
         if (interactable != null)
         {
             interactable.JumpInteraction();
-            Game.instance.PlayJumpSound(transform.position);
+            PlayAnimation("Jump");
         }
         else
-            if(grounded)
-                rb.AddForce(Vector2.up * 400);
+            if (grounded)
+        {
+            rb.AddForce(Vector2.up * 400);
+            Game.instance.PlayJumpSound(transform.position);
+        }
     }
     public void MoveInput(InputAction.CallbackContext context)
     {
@@ -148,5 +172,9 @@ public class Player : MonoBehaviour
             if (groundObjects.Contains(collision.gameObject))
                 groundObjects.Remove(collision.gameObject);
         }
+    }
+    public void AddForce(float force)
+    {
+        rb.velocity = transform.up * force;
     }
 }
